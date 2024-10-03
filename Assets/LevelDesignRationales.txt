@@ -1,0 +1,87 @@
+World 1
+----------
+1	- Tapping a hexagon turns it in the direction of the arrow.
+	- Turning a hexagon turns the laser as well.
+	- Rules applied are counted.
+	- Winning requires connecting lasers.
+	- (Tapping a polygon applies its rule.)																		[1-2]
+	- (Tapping a polygon with no rule still adds to the rules applied.)											[3-4]
+	- (Winning requires clearing the board.)																	[1-3]
+
+2	- Tapping a polygon applies its rule, denoted by the icon on the polygon.
+	- Triangles exist and they turn differently than hexagons do.
+	- Polygons can turn clockwise or counterclockwise.
+	- Polygons can be flipped horizontally.
+	- Winning requires fully connecting polygons in chains.
+	- (Tapping a polygon with no rule still adds to the rules applied.)											[3-4]
+	- (Winning requires clearing the board.)																	[1-3]
+
+3	- Polygons can be flipped vertically.
+	- Triangles flipping vertically work different than hexagons flipping vertically,
+		as it gives them access to directions they weren't able to access before.
+	- Flipping a polygon horizontally does not affect any lasers shooting vertically.
+	- Winning requires clearing the board.
+	- Some moves will lock the level in an unwinnable state. Fixing this will require resetting the board.
+	- (If destroying polygons allows currently existing polygons to link automatically without extra rule
+		applications, these newly formed chains are added to the Longest Chain stat.)							[1-4]
+
+4	- The order of rule applications is important so as to not fall into traps.
+	- There are 3 different traps the player can fall into in this level.
+	- If destroying polygons allows currently existing polygons to link automatically without extra rule
+		applications, these newly formed chains are added to the Longest Chain stat.
+	- (Tapping a polygon with no rule still adds to the rules applied.)											[3-4]
+
+----------
+World 2
+----------
+1	- Connections between two polygons must be of the same color.
+	- (Crossing lasers of different colors turns them into dotted black lines.)									[2-3]
+
+2	- Some puzzles are easier than you'd think.
+	- Focus on figuring out the rotation of one polygon first. After that, the rest fall into place.
+
+3	- Crossing lasers of different colors turns them into dotted black lines.
+	- Sometimes, you need to move lasers out of the way to allow another laser to pass without
+		creating a connection by mistake.
+	- Lasers hitting other lasers at a non-180-degree angle do not count as connections.
+	- (Tapping a polygon with no rule still adds to the rules applied.)											[3-4]
+
+4	- More colors means more limitations on the amount of states the board can have.
+
+5	- Sometimes it's best to start with what is *not* possible rather than what *is*.
+
+6	- Some polygons -- in this case, the triangles -- are distracting and only exist to trap you.
+	- Any unplanned move can result in falling into a trap.
+	- Finding a solution isn't too hard. Finding an optimal solution is difficult.
+
+----------
+World 3
+----------
+1	- Rule connectors...
+		- Can make it hard to connect two polygons.
+		- Can connect rotations to flips and vice versa.
+		- Stop mattering when there is only one polygon remaining in a rule-connected set.
+		- Can land you into traps.
+		- Count as only 1 rule application towards the score.
+
+2	- Pressing a polygon with multiple rule-connections applies to all the rule connections.
+		- This does not chain through all rule connections along the connected polygons
+	- Deleting a connection may ruin the syncronization of another connection									
+
+3	- A rule-connected rotating triangles and flipping polygon will desynchronize
+
+4	- Tapping a polygon with no rule still adds to the rules applied.
+	- A rule-connected polygon with no rule can act as a method of bypassing other rule connectors,
+		allowing you to unsync rule-connected polygons.
+
+5	- Sometimes multiple desyncing methods are available. Not all of them are equal.
+
+6	- When rule connections abound, the best way to clear up the confusion is by focusing on certain polygons and setting a goal for synchronization/desynchronization.
+
+7	- You need to think ahead
+	- Consider first, what the solution should look like. Which lasers should be connected where. Only then, ask yourself what to desynchronize/synchronize
+	- Just because polygons are rule connected, doesn't mean they need to be connected by lasers.
+	- Think about which rule connections you want to apply rather than which polygons you want to spin.
+
+8	- Use everything you have learned.
+	- Good luck.

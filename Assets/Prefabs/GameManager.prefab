@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &565703010290662730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 565703010290662731}
+  - component: {fileID: 565703010290662724}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &565703010290662731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565703010290662730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 221.93092, y: 126.6891, z: -261.31476}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &565703010290662724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565703010290662730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f66378daf64bbd418f3ce7b8ee78fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuSlideRight: 0
+  saveData:
+    version: 
+    worldData:
+    - unlocked: 1
+      levelData:
+      - rulesApplied: -1
+        longestChain: -1
+      - rulesApplied: -1
+        longestChain: -1
+      - rulesApplied: -1
+        longestChain: -1
+      - rulesApplied: -1
+        longestChain: -1
+    - unlocked: 0
+      levelData:
+      - rulesApplied: -1
+        longestChain: -1
+      - rulesApplied: -1
+        longestChain: -1
+      - rulesApplied: -1
+        longestChain: -1
+    - unlocked: 0
+      levelData:
+      - rulesApplied: -1
+        longestChain: -1
+      - rulesApplied: -1
+        longestChain: -1
+      - rulesApplied: -1
+        longestChain: -1
+    lastPlayedWorld: 0
+  levelsPerWorld: 
+  worldColors:
+  - {fileID: 11400000, guid: dc15862e4ea1e10458c8ea198cd99a1e, type: 2}
+  - {fileID: 11400000, guid: 61a84620aa302764690cfb7745ff0322, type: 2}
+  - {fileID: 11400000, guid: 7c625e5eb6a856b4a9a858fd0d6c415f, type: 2}
+  - {fileID: 11400000, guid: a7139d322838bdc4aa18e7558c5453a7, type: 2}
+  - {fileID: 11400000, guid: 5c6468ce589900a499ec58e07ff527f7, type: 2}
+  saveFile: saveData.json
+  currentLevel: 0
+  currentWorld: 0
+  levelJsons:
+  - {fileID: 4900000, guid: 0208e1ff852d9ca419747668a0945161, type: 3}
+  - {fileID: 4900000, guid: b9f6e8442592ed84d87d1e51c1d1621c, type: 3}
+  - {fileID: 4900000, guid: e4f3bd3d0f2adaa4c8d446329f315827, type: 3}
+  - {fileID: 4900000, guid: 96f537be61f4d6a42b77a004a94eb90c, type: 3}
+  - {fileID: 4900000, guid: d14725b6826e43f48ac10100832bfe2e, type: 3}
+  - {fileID: 4900000, guid: c7f761c95f822934787a08cc35ce027f, type: 3}
+  - {fileID: 4900000, guid: a367571301b102b4faab1d52a076d1fb, type: 3}
+  - {fileID: 4900000, guid: 12eff932a9abd1b4bbda53abb37f462e, type: 3}
+  - {fileID: 4900000, guid: c82c53a297e01f94696677aab98bd078, type: 3}
+  - {fileID: 4900000, guid: 1eb3827d5fad35644a78be20b18e542c, type: 3}
+  - {fileID: 4900000, guid: 9cf8d0b22c57ea24ca8ceea0f7f4a002, type: 3}
+  - {fileID: 4900000, guid: f60365985bc42ec409487d2b251d73b7, type: 3}
+  - {fileID: 4900000, guid: de569b0f29136b14f882524072351a3d, type: 3}
+  - {fileID: 4900000, guid: a737dff24fa1aaf44b22f65312c5e34d, type: 3}
+  - {fileID: 4900000, guid: 418599f61feeb94438019abf6f607236, type: 3}
+  - {fileID: 4900000, guid: dea9f7db39cace7458bd330dddc6cb5c, type: 3}
+  - {fileID: 4900000, guid: bf3a3f6ab656d0a46ac41a299577bf0a, type: 3}
+  - {fileID: 4900000, guid: 4ae90c1b7489c5543b5752808adad6be, type: 3}
+  - {fileID: 4900000, guid: 8379ad64d7013d34c97518465ea7d06c, type: 3}
+  currentLevelJson: {fileID: 0}
+  bufferTime: 0.4
+  gameVersion: 
+  onDataLoad:
+    m_PersistentCalls:
+      m_Calls: []
+  currentLevelColors: {fileID: 0}
