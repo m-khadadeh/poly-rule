@@ -29,6 +29,8 @@ public class MainMenuManager : MonoBehaviour
     private Button muteButton;
     [SerializeField]
     private Button unmuteButton;
+    [SerializeField]
+    private SettingsSystem.SettingsManager _settingsManager;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,8 @@ public class MainMenuManager : MonoBehaviour
         PanelController.instance.SwipePanelOff();
         inMainMenu = true;
         optionsMenuObject.SetActive(false);
+        _settingsManager.Initialize();
+        _settingsManager.LoadAllSettings();
     }
 
     public void SetColors()
