@@ -29,20 +29,16 @@ public class MainMenuManager : MonoBehaviour
     private Button muteButton;
     [SerializeField]
     private Button unmuteButton;
-    [SerializeField]
-    private SettingsSystem.SettingsManager _settingsManager;
 
-    // Start is called before the first frame update
-    void Start()
+  // Start is called before the first frame update
+  void Start()
     {
-        uiCanvas.worldCamera = PanelController.instance.canvasCamera;        
-        PanelController.instance.SetPanelProgress(1);
-        SetColors();
-        PanelController.instance.SwipePanelOff();
-        inMainMenu = true;
-        optionsMenuObject.SetActive(false);
-        _settingsManager.Initialize();
-        _settingsManager.LoadAllSettings();
+      uiCanvas.worldCamera = PanelController.instance.canvasCamera;        
+      PanelController.instance.SetPanelProgress(1);
+      SetColors();
+      PanelController.instance.SwipePanelOff();
+      inMainMenu = true;
+      optionsMenuObject.SetActive(false);
     }
 
     public void SetColors()
@@ -74,7 +70,7 @@ public class MainMenuManager : MonoBehaviour
     public void PromptReset()
     {
         optionsMenuLockGroup.SetInteractability(false);
-        DialogBox.instance.Prompt("Reset Save Data?",
+        DialogBox.instance.Prompt("Delete Save Data?",
             () =>
             {
                 GameManager.instance.ResetSaveData();
@@ -102,28 +98,9 @@ public class MainMenuManager : MonoBehaviour
         mainMenuObject.SetActive(inMainMenu);
         optionsMenuObject.SetActive(!inMainMenu);
 
-        if(!inMainMenu)
-        {
-            muteButton.gameObject.SetActive(!AudioManager.instance.MuteVal);
-            unmuteButton.gameObject.SetActive(AudioManager.instance.MuteVal);
-        }
-
         PanelController.instance.SwipePanelOff();
     }
 
-    public void Mute()
-    {
-        AudioManager.instance.Mute();
-        muteButton.gameObject.SetActive(false);
-        unmuteButton.gameObject.SetActive(true);
-    }
-
-    public void Unmute()
-    {
-        AudioManager.instance.Mute();
-        muteButton.gameObject.SetActive(true);
-        unmuteButton.gameObject.SetActive(false);
-    }
 
     public void ToggleOptionsMainMenu()
     {
@@ -132,4 +109,9 @@ public class MainMenuManager : MonoBehaviour
         mainMenuLockGroup.SetInteractability(inMainMenu);
         PanelController.instance.SwipePanelOn(() => { ToggleMenu();});
     }
+
+  public void ResetOptionsToDefaults()
+  {
+    GameManager.instance.settingsManager.ResetToDefaults();
+  } 
 }

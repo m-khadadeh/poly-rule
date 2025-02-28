@@ -17,22 +17,6 @@ namespace SettingsSystem
       }
     }
 
-    public void LoadAllSettings()
-    {
-      foreach(var setting in _gameSettings)
-      {
-        setting.LoadSetting();
-      }
-    }
-
-    public void SaveAllSettings()
-    {
-      foreach(var setting in _gameSettings)
-      {
-        setting.SaveSetting();
-      }
-    }
-
     public void ResetToDefaults()
     {
       foreach(var setting in _gameSettings)

@@ -32,5 +32,7 @@ namespace SettingsSystem
     {
       _slider.value = _setting.Value;
     }
+
+    
   }
 }

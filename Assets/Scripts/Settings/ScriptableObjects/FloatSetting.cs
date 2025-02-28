@@ -15,6 +15,7 @@ namespace SettingsSystem
       set {
         _value = value;
         NotifyObserversChanged();
+        SaveSetting();
       }
     }
 

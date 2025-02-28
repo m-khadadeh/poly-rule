@@ -1,23 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class TooltipSpawner : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField]
-    public string tooltipText;
+  [SerializeField] private FadeInText _text;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (!DialogBox.instance.CurrentlyPrompted)
-        {
-            ToolTip.instance.ShowTooltip(tooltipText);
-        }
-    }
+  public void OnPointerEnter(PointerEventData eventData)
+  {
+    _text.FadeIn();
+  }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        ToolTip.instance.HideTooltip();
-    }
+  public void OnPointerExit(PointerEventData eventData)
+  {
+    _text.FadeOut();
+  }
 }

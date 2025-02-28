@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MasterVolume
   m_EditorClassIdentifier: 
   _settingKey: volume_master
-  _defaultValue: 0.8
+  _defaultValue: 0.7

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SFXVolume
   m_EditorClassIdentifier: 
   _settingKey: volume_sfx
-  _defaultValue: 0.8
+  _defaultValue: 0.5

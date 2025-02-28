@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MusicVolume
   m_EditorClassIdentifier: 
   _settingKey: volume_music
-  _defaultValue: 0.6
+  _defaultValue: 0.5

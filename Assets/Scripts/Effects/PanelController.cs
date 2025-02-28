@@ -100,14 +100,14 @@ public class PanelController : MonoBehaviour
             StopCoroutine(currentCoroutine);
         }
         currentCoroutine = StartCoroutine(SwipePanel(_mainPanel.material, 0, 1, () => {
-            ToolTip.instance.ImmediatelyHide();
+            //ToolTip.instance.ImmediatelyHide();
             callback?.Invoke(); 
         }));
     }
 
     public void SwipePanelOff(System.Action callback = null)
     {
-        ToolTip.instance.ImmediatelyHide();
+        //ToolTip.instance.ImmediatelyHide();
         _lerpFraction = 0;
         if (currentCoroutine != null)
         {

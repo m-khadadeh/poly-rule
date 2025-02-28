@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.IO;
+using SettingsSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,18 +35,20 @@ public class GameManager : MonoBehaviour
 
     public List<ButtonLockGroup> lockGroups;
 
+    public SettingsManager settingsManager;
+
     // Start is called before the first frame update
     void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }    
-        else
-        {
-            Destroy(gameObject);
-        }
+      if(instance == null)
+      {
+          instance = this;
+          DontDestroyOnLoad(gameObject);
+      }    
+      else
+      {
+          Destroy(gameObject);
+      }
     }
 
     private void Start()
@@ -73,6 +76,9 @@ public class GameManager : MonoBehaviour
         saveFilePath = Application.persistentDataPath + "/" + saveFile;
         LoadData();
         DialogBox.instance.TurnOff();
+
+        settingsManager.Initialize();
+        AudioManager.instance.VolumeProcessor.Initialize();
     }
 
     public void UpdateCurrentLevelScore(int rulesApplied, int longestChain)

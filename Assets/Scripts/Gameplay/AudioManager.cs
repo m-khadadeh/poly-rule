@@ -1,90 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+  public static AudioManager instance;
 
-    public AudioSource musicSource;
+  public SettingsSystem.VolumeProcessor VolumeProcessor => _volumeProcessor;
 
-    public AudioClip click;
-    public AudioClip delete;
+  [SerializeField] private SettingsSystem.VolumeProcessor _volumeProcessor;
 
-    public float soundVolume;
+  [SerializeField] private AudioSource _musicSource;
+  [SerializeField] private AudioMixerGroup _SFXmixerGroup;
 
-    bool mute;
+  [SerializeField] private AudioClip _clickSFX;
+  [SerializeField] private AudioClip _deleteSFX;
 
-    public bool MuteVal
-    {
-        get
-        {
-            return mute;
-        }
-    }
+  float _destroyBuffer;
 
-    float destroyBuffer;
+  private void Awake()
+  {
+      if (instance == null)
+      {
+          instance = this;
+          DontDestroyOnLoad(gameObject);
+          _destroyBuffer = -1;
+      }
+      else
+      {
+          Destroy(gameObject);
+      }
+  }
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-            mute = false;
-            musicSource.mute = mute;
-            destroyBuffer = -1;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+  private void Update()
+  {
+      if(_destroyBuffer > -1)
+      {
+          _destroyBuffer += Time.deltaTime;
+          if(_destroyBuffer >= 0.2f)
+          {
+              _destroyBuffer = -1;
+          }
+      }
+  }
 
-    private void Update()
-    {
-        if(destroyBuffer > -1)
-        {
-            destroyBuffer += Time.deltaTime;
-            if(destroyBuffer >= 0.2f)
-            {
-                destroyBuffer = -1;
-            }
-        }
-    }
+  public void PlayClick()
+  {
+      PlaySound(_clickSFX);
+  }
 
-    public void PlayClick()
-    {
-        PlaySound(click);
-    }
+  public void PlayDelete()
+  {
+      if (_destroyBuffer == -1)
+      {
+          PlaySound(_deleteSFX);
+          _destroyBuffer = 0;
+      }
+  }
 
-    public void PlayDelete()
-    {
-        if (destroyBuffer == -1)
-        {
-            PlaySound(delete);
-            destroyBuffer = 0;
-        }
-    }
-
-    void PlaySound(AudioClip clip)
-    {
-        GameObject newSound = new GameObject();
-        DontDestroyOnLoad(newSound);
-        newSound.transform.parent = this.transform;
-        AudioSource newAudio = newSound.AddComponent<AudioSource>();
-        newAudio.volume = mute ? 0 : soundVolume;
-        newAudio.clip = clip;
-        newAudio.playOnAwake = false;
-        newAudio.loop = false;
-        newAudio.mute = mute;
-        newAudio.Play();
-        Destroy(newSound,newAudio.clip.length + 0.1f);
-    }
-
-    public void Mute()
-    {
-        mute = !mute;
-        musicSource.mute = mute;
-    }
+  void PlaySound(AudioClip clip)
+  {
+      GameObject newSound = new GameObject();
+      DontDestroyOnLoad(newSound);
+      newSound.transform.parent = this.transform;
+      AudioSource newAudio = newSound.AddComponent<AudioSource>();
+      newAudio.outputAudioMixerGroup = _SFXmixerGroup;
+      newAudio.volume = 1.0f;
+      newAudio.clip = clip;
+      newAudio.playOnAwake = false;
+      newAudio.loop = false;
+      newAudio.Play();
+      Destroy(newSound,newAudio.clip.length + 0.1f);
+  }
 }

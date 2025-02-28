@@ -107,7 +107,6 @@ public class HUD : MonoBehaviour
 
     public void HideBrief(string nextFunction)
     {
-        ToolTip.instance.BringToIndex(1);
         levelHUD.SetActive(true);
         Vector3 mask2Start = new Vector3(maskExitPositions[2].position.x * -1, maskExitPositions[2].position.y, maskExitPositions[2].position.z);
         Vector3 mask1Start = new Vector3(maskExitPositions[1].position.x * -1, maskExitPositions[1].position.y, maskExitPositions[1].position.z);
@@ -146,7 +145,6 @@ public class HUD : MonoBehaviour
     {
         levelHUD.SetActive(false);
         endLevelButtons.SetActive(true);
-        ToolTip.instance.BringToIndex(3);
         //Debug.Log("Next Level: " + GameManager.instance.currentWorld.ToString() + "-" + (GameManager.instance.currentLevel + 1).ToString());
         nextLevelButton.SetActive(GameManager.instance.GetLevelAssetFromData(GameManager.instance.currentWorld, GameManager.instance.currentLevel + 1) != null);
         yield return null;

@@ -16,10 +16,13 @@ namespace SettingsSystem
     public abstract void SaveSetting();
     public abstract void ResetToDefault();
 
+    private bool _initialized;
+
     public void Initialize()
     {
       _settingChangedObservers = new List<Action>();
       _settingResetObservers = new List<Action>();
+      LoadSetting();
     }
 
     public void SubscribeChanged(Action eventHandler)

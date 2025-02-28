@@ -111,7 +111,7 @@ Material:
     - _MaxEndCutoff: 0
     - _Metallic: 0
     - _MinEndCutoff: 1
-    - _NumberOfLetters: 4
+    - _NumberOfLetters: 13
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
