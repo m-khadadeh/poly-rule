@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public List<ButtonLockGroup> lockGroups;
 
     public SettingsManager settingsManager;
+    public SettingsSystem.DisplayProcessor displayProcessor;
 
     // Start is called before the first frame update
     void Awake()
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
         DialogBox.instance.TurnOff();
 
         settingsManager.Initialize();
+        displayProcessor.Initialize();
         AudioManager.instance.VolumeProcessor.Initialize();
     }
 

@@ -6713,6 +6713,30 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 71182caf2ef586333836e6af1ed1c3e8, type: 2}
   - {fileID: 11400000, guid: 26165ccb61e570b33b6478f6fd7f4e9a, type: 2}
   - {fileID: 11400000, guid: 907dd5a5dab018580a931d86fd0efb5e, type: 2}
+--- !u!114 &1400429956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400429952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ef278546a1113d3b6ac10f037e7b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _displayMode: {fileID: 11400000, guid: 26165ccb61e570b33b6478f6fd7f4e9a, type: 2}
+  _resolution: {fileID: 11400000, guid: 907dd5a5dab018580a931d86fd0efb5e, type: 2}
+  _possibleDisplayModes: 030000000000000001000000
+  _possibleResolutions:
+  - {x: 2560, y: 1600}
+  - {x: 2560, y: 1440}
+  - {x: 1920, y: 1200}
+  - {x: 1920, y: 1080}
+  - {x: 1440, y: 900}
+  - {x: 1366, y: 768}
+  - {x: 1280, y: 720}
+  - {x: 640, y: 480}
 --- !u!224 &1420198970 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2366987953220826092, guid: 44e3565026c31af44abfd6f84a541ab2, type: 3}
@@ -9512,6 +9536,10 @@ PrefabInstance:
       propertyPath: settingsManager
       value: 
       objectReference: {fileID: 1400429955}
+    - target: {fileID: 565703010290662724, guid: d730d43104624f74e8e0a63e01b17cd3, type: 3}
+      propertyPath: displayProcessor
+      value: 
+      objectReference: {fileID: 1400429956}
     - target: {fileID: 565703010290662724, guid: d730d43104624f74e8e0a63e01b17cd3, type: 3}
       propertyPath: currentLevelColors
       value: 

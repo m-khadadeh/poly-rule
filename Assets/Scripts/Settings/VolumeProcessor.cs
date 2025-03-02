@@ -49,7 +49,7 @@ namespace SettingsSystem
         ProcessValues();
       }
 
-      public void ProcessValues()
+      private void ProcessValues()
       {
         float muteMultiplier = (_mute.Value == 0 ? 1.0f : 0.0f); // Invert the mute value
         _mixer.SetFloat(_mixerPropertyName, Mathf.Log10(
