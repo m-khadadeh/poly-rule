@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
 
         // Load Data
         saveFilePath = Application.persistentDataPath + "/" + saveFile;
+        Debug.Log(saveFilePath);
         LoadData();
         DialogBox.instance.TurnOff();
 

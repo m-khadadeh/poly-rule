@@ -26,9 +26,7 @@ public class MainMenuManager : MonoBehaviour
     private ButtonLockGroup optionsMenuLockGroup;
 
     [SerializeField]
-    private Button muteButton;
-    [SerializeField]
-    private Button unmuteButton;
+    private List<MuteButton> _muteButtons;
 
   // Start is called before the first frame update
   void Start()
@@ -95,10 +93,18 @@ public class MainMenuManager : MonoBehaviour
 
     void ToggleMenu()
     {
-        mainMenuObject.SetActive(inMainMenu);
-        optionsMenuObject.SetActive(!inMainMenu);
+      mainMenuObject.SetActive(inMainMenu);
+      optionsMenuObject.SetActive(!inMainMenu);
 
-        PanelController.instance.SwipePanelOff();
+      if(optionsMenuObject.activeSelf)
+      {
+        foreach(var muteButton in _muteButtons)
+        {
+          muteButton.Initialize();
+        }
+      }
+
+      PanelController.instance.SwipePanelOff();
     }
 
 

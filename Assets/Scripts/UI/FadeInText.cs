@@ -9,6 +9,11 @@ public class FadeInText : MonoBehaviour
   [SerializeField] private float _initAlpha;
   [SerializeField] private float _lerpTime;
 
+  public delegate void FadeEventComplete();
+
+  public event FadeEventComplete onFadeInComplete;
+  public event FadeEventComplete onFadeOutComplete;
+
   private float _currentAlpha;
   private bool _lerping;
   private float _targetAlpha;
@@ -36,6 +41,16 @@ public class FadeInText : MonoBehaviour
         _lerping = false;
         _currentAlpha = _targetAlpha;
         _currentTime = 0;
+        if(_currentAlpha <= 0.1f)
+        {
+          // Faded out
+          onFadeOutComplete?.Invoke();
+        }
+        else
+        {
+          // Faded in
+          onFadeInComplete?.Invoke();
+        }
       }
       _text.alpha = _currentAlpha;
     }
@@ -53,5 +68,10 @@ public class FadeInText : MonoBehaviour
     _startingAlpha = _currentAlpha;
     _targetAlpha = 0.0f;
     _lerping = true;
+  }
+
+  public void SetText(string newText)
+  {
+    _text.text = newText;
   }
 }
