@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SettingsSystem;
 using UnityEngine;
 
 public class LoadLevelManager : MonoBehaviour
@@ -25,6 +26,8 @@ public class LoadLevelManager : MonoBehaviour
 
     public MeshRenderer backgroundMeshRenderer;
     public UnityEngine.UI.Image foregroundPanel;
+    public FadeInText tutorialText;
+    public IntSetting tutorialsEnabled;
 
     private static Queue<PolygonController> polysQueued;
 
@@ -111,6 +114,7 @@ public class LoadLevelManager : MonoBehaviour
     [System.Serializable]
     class LevelData
     {
+		public string tutorialText;
         public float[] sizeData;
         public PolyData[] levelObjects;
     }
@@ -130,6 +134,15 @@ public class LoadLevelManager : MonoBehaviour
     {
         //Debug.Log(GameManager.instance.currentLevelJson.text);
         LevelData polygonDataArr = JsonUtility.FromJson<LevelData>(GameManager.instance.currentLevelJson.text);
+        if(tutorialsEnabled.Value != 0)
+        {
+          tutorialText.SetText(polygonDataArr.tutorialText);
+          tutorialText.FadeIn();
+        }
+        else
+        {
+          tutorialText.SetAlpha(0);
+        }
         if(TriangularCoordinates.instance == null)
         {
             TriangularCoordinates.instance = FindObjectOfType<TriangularCoordinates>();
@@ -286,6 +299,11 @@ public class LoadLevelManager : MonoBehaviour
             {
                 nextPoly.wasSelectedToApply = true;
                 lastSelectedPolygon = nextPoly;
+
+                if(tutorialText.CurrentAlpha > 0.9f)
+                {
+                  tutorialText.FadeOut();
+                }
 
                 //rulesApplied++;
                 AudioManager.instance.PlayClick();

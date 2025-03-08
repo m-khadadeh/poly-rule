@@ -14,6 +14,8 @@ public class FadeInText : MonoBehaviour
   public event FadeEventComplete onFadeInComplete;
   public event FadeEventComplete onFadeOutComplete;
 
+  public float CurrentAlpha => _currentAlpha;
+
   private float _currentAlpha;
   private bool _lerping;
   private float _targetAlpha;
@@ -38,9 +40,7 @@ public class FadeInText : MonoBehaviour
       }
       else
       {
-        _lerping = false;
-        _currentAlpha = _targetAlpha;
-        _currentTime = 0;
+        SetAlpha(_targetAlpha);
         if(_currentAlpha <= 0.1f)
         {
           // Faded out
@@ -68,6 +68,13 @@ public class FadeInText : MonoBehaviour
     _startingAlpha = _currentAlpha;
     _targetAlpha = 0.0f;
     _lerping = true;
+  }
+
+  public void SetAlpha(float alpha)
+  {
+    _lerping = false;
+    _currentAlpha = alpha;
+    _currentTime = 0;
   }
 
   public void SetText(string newText)

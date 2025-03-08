@@ -1,1 +1,1 @@
-{"sizeData":[10,1],"levelObjects":[{"index":91,"type":1,"position":[4,-4],"rule":"rotateCW","laserData":[0,0,0,4,0,0],"ruleConnectors":[]},{"index":222,"type":1,"position":[-3,3],"rule":"none","laserData":[0,4,0,0,0,0],"ruleConnectors":[]}]}
+{"tutorialText":"Connect.","sizeData":[10,1],"levelObjects":[{"index":91,"type":1,"position":[4,-4],"rule":"rotateCW","laserData":[0,0,0,4,0,0],"ruleConnectors":[]},{"index":222,"type":1,"position":[-3,3],"rule":"none","laserData":[0,4,0,0,0,0],"ruleConnectors":[]}]}
