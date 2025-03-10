@@ -13,6 +13,8 @@ public class LevelSelectManager : MonoBehaviour
     //public Transform panelTransform;
     public Transform[] panelPositions; // 0 is left, 1 is center, 2 is right
     public float panelMoveTime;
+
+    public UIClickPlayer clickPlayer;
     
 
     public List<Transform> worldButtonSets;
@@ -45,6 +47,10 @@ public class LevelSelectManager : MonoBehaviour
 
     private int currentWorld = 0;
 
+
+    public ColorBlock worldCirclesBlock;
+    public ColorBlock worldCirclesSelected;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +59,7 @@ public class LevelSelectManager : MonoBehaviour
 
         PanelController.instance.ChangePanelColor(levelColorData.foregroundColor);
         PanelController.instance.SetPanelProgress(1);
-
+        
         // Populate Sets
         levelButtons = new List<LevelButtonData>();
 
@@ -79,6 +85,7 @@ public class LevelSelectManager : MonoBehaviour
                 unityButton.onClick.AddListener(() =>
                 {
                     GoToLevel(newButton);
+                    clickPlayer.Click();
                 });
                 levelButtons.Add(newButton);
             }
@@ -110,6 +117,7 @@ public class LevelSelectManager : MonoBehaviour
             circleButton.onClick.AddListener(() =>
             {
                 GoToWorld(worldNum);
+                clickPlayer.Click();
             });
             worldCircleButtons.Add(circleButton.GetComponent<LockableButton>());
         }
@@ -120,13 +128,21 @@ public class LevelSelectManager : MonoBehaviour
         //panelController.ChangePanelColor(worldButtonSets[currentWorld].GetChild(0).GetChild(0).GetComponent<LevelButtonData>().foregroundColor);
         //panel.color = worldButtonSets[currentWorld].GetChild(0).GetChild(0).GetComponent<LevelButtonData>().foregroundColor;
     }
-
+    
     public void SetButtonInteractability(bool falseOverride)
     {
         worldButtons.SetInteractability(falseOverride);
         for(int i = 0; i < worldCircleButtons.Count; i++)
         {
-            worldCircleButtons[i].SetInteractability(falseOverride && (currentWorld != i));
+          if(currentWorld == i)
+          {
+            worldCircleButtons[i].GetComponent<Button>().colors = worldCirclesSelected;
+          }
+          else
+          {
+            worldCircleButtons[i].GetComponent<Button>().colors = worldCirclesBlock;
+          }
+          worldCircleButtons[i].SetInteractability(falseOverride && (currentWorld != i));
         }
     }
 

@@ -371,7 +371,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 65448a9262b875f428e14668a0c60e56, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: bbf39a9f1d97fdc47b79ce8715c99a91, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 3137ebc3deebdb741899cfc2893b88c4, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: e8a9bd83c7f04404886522538ae747fb, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 3137ebc3deebdb741899cfc2893b88c4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -393,6 +393,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: LevelMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 472511985}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &203096664
@@ -594,6 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472511982}
   - component: {fileID: 472511984}
+  - component: {fileID: 472511985}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -659,6 +672,18 @@ MonoBehaviour:
   colorData: {fileID: 11400000, guid: b2b57dab233ee794c888d36540866894, type: 2}
   plusOneParticlesObject: {fileID: 1732912645355381751, guid: 75ab63bf0a04a654893eef7aa8fe4643, type: 3}
   queuedParticlesObject: {fileID: 5300467181581102417, guid: c315be1f14adcf0468e4a902e81ac6b9, type: 3}
+--- !u!114 &472511985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472511981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ba6545f415915a5833b9dd6b1cc51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &512585345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,7 +1648,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: b1883c2ce67b7ea459aae00a529c70fc, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 21a8d3270ae27bc468bcfb9ad25774d3, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 97e4cde28beb6a9429cf2663ba65ead7, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 609a74d1ca104b24a9b2a3781c9bf239, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 97e4cde28beb6a9429cf2663ba65ead7, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1638,6 +1663,18 @@ MonoBehaviour:
       - m_Target: {fileID: 472511984}
         m_TargetAssemblyTypeName: LoadLevelManager, Assembly-CSharp
         m_MethodName: PromptReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 472511985}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1802,7 +1839,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: b1883c2ce67b7ea459aae00a529c70fc, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 21a8d3270ae27bc468bcfb9ad25774d3, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 97e4cde28beb6a9429cf2663ba65ead7, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 609a74d1ca104b24a9b2a3781c9bf239, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 97e4cde28beb6a9429cf2663ba65ead7, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1824,6 +1861,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ResetScene
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 472511985}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1217196315}
@@ -3886,7 +3935,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 65448a9262b875f428e14668a0c60e56, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: bbf39a9f1d97fdc47b79ce8715c99a91, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 3137ebc3deebdb741899cfc2893b88c4, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: e8a9bd83c7f04404886522538ae747fb, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 3137ebc3deebdb741899cfc2893b88c4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -3908,6 +3957,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: LevelMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 472511985}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1217196315}
@@ -3962,7 +4023,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: f531221f6327add49b5dea0888e36291, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: eda6f7b007eb42c43a53db57eb780224, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 54007b77c87fecb489d38bbe02e4baad, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 689411fe930ad1f4fa2e5e94dfd87677, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 54007b77c87fecb489d38bbe02e4baad, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -3984,6 +4045,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: NextLevel
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 472511985}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1217196315}

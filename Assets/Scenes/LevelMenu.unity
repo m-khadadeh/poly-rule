@@ -532,7 +532,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e600407f4317a8341a42d90a5656d0cf, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 79da89cc605ae9b4ea8efc89eeba9710, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 408e149d2efe509468e2768bc4b35f5c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 279751853641bfd4580afcad287e2bd0, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 408e149d2efe509468e2768bc4b35f5c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -547,6 +547,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1839521165}
         m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: PrevWorld
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1839521166}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1007,7 +1019,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: f531221f6327add49b5dea0888e36291, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: eda6f7b007eb42c43a53db57eb780224, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 54007b77c87fecb489d38bbe02e4baad, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 689411fe930ad1f4fa2e5e94dfd87677, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 54007b77c87fecb489d38bbe02e4baad, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1022,6 +1034,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1839521165}
         m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: GoToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1839521166}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1121,6 +1145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839521164}
   - component: {fileID: 1839521165}
+  - component: {fileID: 1839521166}
   m_Layer: 0
   m_Name: LevelSelectManager
   m_TagString: Untagged
@@ -1162,6 +1187,7 @@ MonoBehaviour:
   - {fileID: 1129619432367379647}
   - {fileID: 1129619432648417996}
   panelMoveTime: 0.8
+  clickPlayer: {fileID: 1839521166}
   worldButtonSets: []
   levelSelectContainer: {fileID: 674502564}
   worldButtonPrefab: {fileID: 5244388953270495592, guid: b9403594e966df14fa2d9de668953ebf, type: 3}
@@ -1175,6 +1201,34 @@ MonoBehaviour:
   levelSelectButtons: {fileID: 11400000, guid: 6a7dceabb3e349b44ac1e43d730cbee6, type: 2}
   nextWorldButton: {fileID: 2022376016}
   prevWorldButton: {fileID: 1046486911}
+  worldCirclesBlock:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.627451}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.8235294}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.627451}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.627451}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  worldCirclesSelected:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+--- !u!114 &1839521166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839521163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ba6545f415915a5833b9dd6b1cc51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865186858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1571,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e600407f4317a8341a42d90a5656d0cf, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 79da89cc605ae9b4ea8efc89eeba9710, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 408e149d2efe509468e2768bc4b35f5c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 279751853641bfd4580afcad287e2bd0, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 408e149d2efe509468e2768bc4b35f5c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1532,6 +1586,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1839521165}
         m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: NextWorld
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1839521166}
+        m_TargetAssemblyTypeName: UIClickPlayer, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
