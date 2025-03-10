@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour
 {
@@ -104,13 +105,13 @@ public class LevelSelectManager : MonoBehaviour
             worldButtonSets[i].gameObject.SetActive(false);
             GameObject newCircle = Instantiate(worldCirclePrefab, worldCirclesPivot);
             worldCircles.Add(newCircle.GetComponent<UnityEngine.UI.Image>());
-            var circleButton = newCircle.GetComponent<LockableButton>();
+            var circleButton = newCircle.GetComponent<Button>();
             int worldNum = i;
-            circleButton.UiButton.onClick.AddListener(() =>
+            circleButton.onClick.AddListener(() =>
             {
                 GoToWorld(worldNum);
             });
-            worldCircleButtons.Add(circleButton);
+            worldCircleButtons.Add(circleButton.GetComponent<LockableButton>());
         }
 
         SetWorld(GameManager.instance.saveData.lastPlayedWorld);

@@ -11,7 +11,7 @@ public class TextButton : LockableButton
 
     public override void SetInteractability(bool interactable)
     {
-        textMesh.color = interactable ? Color.white : disabledColor;
+        //textMesh.color = interactable ? Color.white : disabledColor;
         base.SetInteractability(interactable);
     }
 }
