@@ -45,9 +45,7 @@ namespace SettingsSystem
             () => {_optionsGroup.SetInteractability(true);},
             () => {
               _setting.Value = _previousSetting;
-              _dropdown.onValueChanged.RemoveListener(UpdateSetting);
               SyncDropdownToSetting();
-              _dropdown.onValueChanged.AddListener(UpdateSetting);
               _optionsGroup.SetInteractability(true);
               },
             10);
@@ -56,7 +54,9 @@ namespace SettingsSystem
 
     private void SyncDropdownToSetting()
     {
+      _dropdown.onValueChanged.RemoveListener(UpdateSetting);
       _dropdown.value = _setting.Value;
+      _dropdown.onValueChanged.AddListener(UpdateSetting);
     }
   }
 }
