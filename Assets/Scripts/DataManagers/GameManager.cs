@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         LoadData();
         DialogBox.instance.TurnOff();
 
+        displayProcessor.SetDefaultToNativeResolution();
         settingsManager.Initialize();
         displayProcessor.Initialize();
         AudioManager.instance.VolumeProcessor.Initialize();

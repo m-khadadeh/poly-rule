@@ -3903,6 +3903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _setting: {fileID: 11400000, guid: 26165ccb61e570b33b6478f6fd7f4e9a, type: 2}
   _dropdown: {fileID: 713108410}
+  _askConfirmation: 1
+  _optionsGroup: {fileID: 11400000, guid: aecc53a798c792244ae05b29b0f80c60, type: 2}
 --- !u!114 &713108414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6689,6 +6691,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _setting: {fileID: 11400000, guid: 907dd5a5dab018580a931d86fd0efb5e, type: 2}
   _dropdown: {fileID: 1116678603}
+  _askConfirmation: 1
+  _optionsGroup: {fileID: 11400000, guid: aecc53a798c792244ae05b29b0f80c60, type: 2}
 --- !u!114 &1116678607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11187,6 +11191,18 @@ PrefabInstance:
     - target: {fileID: 7007955459210946618, guid: 44e3565026c31af44abfd6f84a541ab2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994764735568073455, guid: 44e3565026c31af44abfd6f84a541ab2, type: 3}
+      propertyPath: revealEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994764735568073455, guid: 44e3565026c31af44abfd6f84a541ab2, type: 3}
+      propertyPath: revealSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994764735568073455, guid: 44e3565026c31af44abfd6f84a541ab2, type: 3}
+      propertyPath: revealStart
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e3565026c31af44abfd6f84a541ab2, type: 3}

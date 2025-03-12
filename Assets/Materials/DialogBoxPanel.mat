@@ -95,10 +95,10 @@ Material:
     - _GutterPulseSpeed: 2
     - _GutterWidth: -0.13
     - _Metallic: 0
-    - _MiniHexTiling: 30.06
+    - _MiniHexTiling: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Progress: 6
+    - _Progress: 30
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -115,8 +115,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GutterWidthRange: {r: 0.18, g: 0.3, b: 0, a: 0}
-    - _MiniHexOffset: {r: -0.011, g: 0, b: 0, a: 0}
-    - _Offset: {r: -0.22, g: 6.2, b: 0, a: 0}
+    - _MiniHexOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Offset: {r: -0.21, g: 6.16, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1308868550182485724

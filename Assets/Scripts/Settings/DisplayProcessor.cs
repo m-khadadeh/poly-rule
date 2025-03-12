@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace SettingsSystem
 {
@@ -16,6 +17,39 @@ namespace SettingsSystem
     void Awake()
     {
       _initialized = false;
+    }
+
+    public void SetDefaultToNativeResolution()
+    {
+      Debug.Log(Display.main.systemWidth + " " + Display.main.systemHeight);
+      int height = _possibleResolutions[0].y;
+      for(int i = 1; i < _possibleResolutions.Count && height > Display.main.systemHeight; i++)
+      {
+        height = _possibleResolutions[1].y;
+      }
+      int width = _possibleResolutions[0].x;
+      int resolutionIndex = 0;
+      while(resolutionIndex < _possibleResolutions.Count)
+      {
+        if(height == _possibleResolutions[resolutionIndex].y)
+        {
+          width = _possibleResolutions[resolutionIndex].x;
+          if(width <= Display.main.systemWidth)
+          {
+            break;
+          }
+        }
+        resolutionIndex++;
+      }
+      for(int i = 0; i < _possibleResolutions.Count; i++)
+      {
+        if(_possibleResolutions[i].x == width && _possibleResolutions[i].y == height)
+        {
+          resolutionIndex = i;
+          break;
+        }
+      }
+      _resolution.SetDefaultValue(resolutionIndex);
     }
 
     public void Initialize()

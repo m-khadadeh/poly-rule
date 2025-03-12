@@ -36,5 +36,10 @@ namespace SettingsSystem
     {
       PlayerPrefs.SetInt(_settingKey, _value);
     }
+
+    public void SetDefaultValue(int value)
+    {
+      _defaultValue = value;
+    }
   }
 }
