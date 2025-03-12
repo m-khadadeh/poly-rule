@@ -39,6 +39,10 @@ public class DialogBox : MonoBehaviour
 
     private bool _currentlyPrompted;
 
+    float countdownTimer;
+
+    string preCountdownText;
+
     public bool CurrentlyPrompted
     {
         get
@@ -49,6 +53,7 @@ public class DialogBox : MonoBehaviour
 
     private void Awake()
     {
+      countdownTimer = -2;
         if(instance == null)
         {
             instance = this;
@@ -60,13 +65,45 @@ public class DialogBox : MonoBehaviour
         _currentlyPrompted = false;
     }
 
-    public void Prompt(string promptText, Action onYes, Action onNo)
+  void Update()
+  {
+    if(_currentlyPrompted)
     {
-        promptTMP.text = promptText;
-        yesAction = onYes;
-        noAction = onNo;
-        _currentlyPrompted = true;
-        StartReveal(true);
+      if(countdownTimer > 0)
+      {
+        countdownTimer -= Time.deltaTime;
+        promptTMP.text = preCountdownText + Mathf.Ceil(countdownTimer).ToString();
+      }
+      else if(countdownTimer > -1)
+      {
+        countdownTimer = -2;
+        DialogBox.instance.StartReveal(false);
+        DoNoAction();
+      }
+    }
+    
+  }
+
+  public void Prompt(string promptText, Action onYes, Action onNo)
+    {
+      promptTMP.text = promptText;
+      yesAction = onYes;
+      noAction = onNo;
+      _currentlyPrompted = true;
+      StartReveal(true);
+    }
+
+    
+
+    public void PromptCountdown(string promptText, Action onYes, Action onNo, float countdownSeconds)
+    {
+      countdownTimer = countdownSeconds;
+      preCountdownText = promptText + " Reset in ";
+      promptTMP.text = preCountdownText + Mathf.Ceil(countdownTimer).ToString();
+      yesAction = onYes;
+      noAction = onNo;
+      _currentlyPrompted = true;
+      StartReveal(true);
     }
 
     public void StartReveal(bool show)
@@ -83,12 +120,14 @@ public class DialogBox : MonoBehaviour
     public void DoYesAction()
     {
         _currentlyPrompted = false;
+        countdownTimer = -2;
         yesAction?.Invoke();
     }
 
     public void DoNoAction()
     {
         _currentlyPrompted = false;
+        countdownTimer = -2;
         noAction?.Invoke();
     }
 
@@ -102,7 +141,7 @@ public class DialogBox : MonoBehaviour
         _revealLerpTime = 0;
         while(_revealLerpTime < 1)
         {
-            revealMaterial.SetFloat("_Progress", Mathf.Lerp(show ? revealStart : revealEnd, show ? revealEnd : revealStart, _revealLerpTime));
+            revealMaterial.SetFloat("_Progress", Mathf.Lerp(show ? revealStart : revealEnd, show ? revealEnd : revealStart, Mathf.SmoothStep(0.0f, 1.0f, _revealLerpTime)));
             _revealLerpTime += Time.deltaTime * revealSpeed;
             yield return null;
         }
